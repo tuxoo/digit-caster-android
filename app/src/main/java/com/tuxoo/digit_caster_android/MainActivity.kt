@@ -12,7 +12,7 @@ import com.tuxoo.digit_caster_android.screens.factory
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: CalculationViewModel by viewModels { factory() }
+    private val viewModel: CalculationViewModel by viewModels { factory(this) } // TODO: now work state handle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
