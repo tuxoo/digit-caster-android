@@ -25,31 +25,28 @@ class CalculationService {
         notifyChanges()
     }
 
-    fun setOperation(operation: String) {
-        if (calculation.previousNum.isBlank()) {
-            calculation.previousNum = calculation.currentNum
+    fun setOperation(operation: String): Unit =
+        with(calculation) {
+            if (previousNum.isBlank()) {
+                previousNum = currentNum
+                currentNum = ""
+            }
+
+            this.operation = operation
+            notifyChanges()
         }
-
-        calculation.operation = operation
-        calculation.currentNum = ""
-
-        notifyChanges()
-    }
 
     fun addListener(listener: CalculationListener) {
         listeners.add(listener)
         listener.invoke(calculation)
     }
 
-    fun removeListener(listener: CalculationListener) {
-        listeners.forEach {
-            it.invoke(calculation)
-        }
-    }
+    fun removeListener(listener: CalculationListener): Boolean =
+        listeners.remove(listener)
 
-    private fun notifyChanges() {
+    private fun notifyChanges(): Unit =
         listeners.forEach {
             it.invoke(calculation)
         }
-    }
+
 }
