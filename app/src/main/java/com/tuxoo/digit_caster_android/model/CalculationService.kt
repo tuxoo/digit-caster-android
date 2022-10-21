@@ -14,12 +14,25 @@ class CalculationService {
 
     fun erase(): Boolean {
         calculation.currentNum = ""
+        calculation.operation = ""
+        calculation.previousNum = ""
         notifyChanges()
         return true
     }
 
     fun addDigit(digit: String) {
         calculation.currentNum += digit
+        notifyChanges()
+    }
+
+    fun setOperation(operation: String) {
+        if (calculation.previousNum.isBlank()) {
+            calculation.previousNum = calculation.currentNum
+        }
+
+        calculation.operation = operation
+        calculation.currentNum = ""
+
         notifyChanges()
     }
 

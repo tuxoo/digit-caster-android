@@ -95,6 +95,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
+                android:tag="@string/operation"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -103,6 +104,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
+                android:tag="@string/operation"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -111,6 +113,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/divide"
+                android:tag="@string/operation"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -119,6 +122,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiply"
+                android:tag="@string/operation"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -154,6 +158,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqr"
+                android:tag="@string/operation"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -189,6 +194,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"
+                android:tag="@string/operation"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"

@@ -29,6 +29,8 @@ class CalculationViewModel(
     fun erase(): Boolean =
         calculationService.erase()
 
+    fun setOperation(operation: String): Unit =
+        calculationService.setOperation(operation)
 
     fun addDigit(digit: String): Unit =
         calculationService.addDigit(digit)

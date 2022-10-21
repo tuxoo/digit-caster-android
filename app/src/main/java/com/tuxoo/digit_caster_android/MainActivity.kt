@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.calculation.observe(this) {
             binding.currentNumber.setText(it.currentNum)
+            binding.operation.text = it.operation
+            binding.previousNumber.text = it.previousNum
         }
 
         binding.erase.setOnClickListener {
@@ -32,18 +34,31 @@ class MainActivity : AppCompatActivity() {
             viewModel.erase()
         }
 
-        digitButtonClickListener()
+        binding.plus.setOnClickListener {
+            viewModel.setOperation("+")
+        }
+
+        setClickListeners()
     }
 
-    private fun digitButtonClickListener(): Unit =
+    private fun setClickListeners(): Unit =
         binding.gridLayout.forEach {
-            if (it is AppCompatButton && it.tag == "digit") {
+            if (it is AppCompatButton) {
                 with(it.text.toString()) {
-                    it.setOnClickListener {
-                        viewModel.addDigit(this)
+                    when (it.tag) {
+                        DIGIT -> it.setOnClickListener {
+                            viewModel.addDigit(this)
+                        }
+                        OPERATION -> it.setOnClickListener {
+                            viewModel.setOperation(this)
+                        }
                     }
                 }
             }
         }
 
+    companion object {
+        private const val DIGIT = "digit"
+        private const val OPERATION = "operation"
+    }
 }
