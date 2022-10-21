@@ -35,4 +35,8 @@ class CalculationViewModel(
     fun addDigit(digit: String): Unit =
         calculationService.addDigit(digit)
 
+    override fun onCleared() {
+        super.onCleared()
+        calculationService.removeListener(listener)
+    }
 }
