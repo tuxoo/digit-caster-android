@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/background_gradient">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="42dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/background_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+        <TextView
+            android:id="@+id/firstNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="8" />
+
+        <TextView
+            android:id="@+id/action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstNumber"
+            tools:text="+" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="3"
+                android:layout_gravity="fill"
+                android:layout_margin="4dp"
+                android:background="@drawable/edit_shape"
+                android:ellipsize="end"
+                android:inputType="text"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="8" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/erase"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/minus" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/plus" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/divide" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/multiple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/seven" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/eight" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/nine" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/sqr" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/four" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/five" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/six" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/sqrt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/one" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/two" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/three" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/equal" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/zero" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/point" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="4"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:lines="1"
+                android:text="@string/copy_mark"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+        </GridLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
