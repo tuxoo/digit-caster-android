@@ -12,15 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="42dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
         android:background="@drawable/background_shape"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/firstNumber"
+            android:id="@+id/previousNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -35,7 +34,7 @@
             tools:text="8" />
 
         <TextView
-            android:id="@+id/action"
+            android:id="@+id/operation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -46,7 +45,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/firstNumber"
+            app:layout_constraintTop_toBottomOf="@+id/previousNumber"
             tools:text="+" />
 
         <ImageView
@@ -65,26 +64,27 @@
             android:layout_height="wrap_content"
             android:columnCount="4"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
             <EditText
-                android:id="@+id/edit_text"
+                android:id="@+id/current_number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="63dp"
                 android:layout_columnSpan="3"
                 android:layout_gravity="fill"
                 android:layout_margin="4dp"
                 android:background="@drawable/edit_shape"
                 android:ellipsize="end"
-                android:inputType="text"
                 android:lines="1"
+                android:hint="@string/current_num_placeholder"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                tools:text="8" />
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/erase"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -94,6 +94,7 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/minus"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -101,6 +102,7 @@
                 android:text="@string/minus" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/plus"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -108,6 +110,7 @@
                 android:text="@string/plus" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/divide"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -115,13 +118,16 @@
                 android:text="@string/divide" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/multiply"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
-                android:text="@string/multiple" />
+                android:text="@string/multiply" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seven"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -129,6 +135,8 @@
                 android:text="@string/seven" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/eight"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -136,6 +144,8 @@
                 android:text="@string/eight" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nine"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -143,6 +153,7 @@
                 android:text="@string/nine" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sqr"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -150,6 +161,8 @@
                 android:text="@string/sqr" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/four"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -157,6 +170,8 @@
                 android:text="@string/four" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/five"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -164,6 +179,8 @@
                 android:text="@string/five" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/six"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -171,6 +188,7 @@
                 android:text="@string/six" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sqrt"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -178,6 +196,8 @@
                 android:text="@string/sqrt" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/one"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -185,6 +205,8 @@
                 android:text="@string/one" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/two"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -192,6 +214,8 @@
                 android:text="@string/two" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/three"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -199,6 +223,7 @@
                 android:text="@string/three" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/equal"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_rowSpan="2"
@@ -208,6 +233,8 @@
                 android:text="@string/equal" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/zero"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_columnSpan="2"
@@ -217,6 +244,8 @@
                 android:text="@string/zero" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/point"
+                android:tag="@string/digit"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
