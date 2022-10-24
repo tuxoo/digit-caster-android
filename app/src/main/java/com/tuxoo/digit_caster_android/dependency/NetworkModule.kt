@@ -1,7 +1,7 @@
 package com.tuxoo.digit_caster_android.dependency
 
 import com.squareup.moshi.Moshi
-import com.tuxoo.digit_caster_android.Const
+import com.tuxoo.digit_caster_android.model.Const
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

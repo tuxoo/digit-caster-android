@@ -1,4 +1,4 @@
-package com.tuxoo.digit_caster_android
+package com.tuxoo.digit_caster_android.model
 
 object Const {
 
