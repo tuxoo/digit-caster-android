@@ -33,10 +33,6 @@ class MainActivity : AppCompatActivity() {
             viewModel.erase()
         }
 
-        binding.plus.setOnClickListener {
-            viewModel.setOperation("+")
-        }
-
         binding.equal.setOnClickListener {
             viewModel.getResult()
         }
