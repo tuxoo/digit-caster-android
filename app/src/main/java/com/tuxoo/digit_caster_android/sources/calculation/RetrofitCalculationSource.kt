@@ -5,8 +5,11 @@ import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import com.tuxoo.digit_caster_android.sources.base.BaseRetrofitSource
 import com.tuxoo.digit_caster_android.sources.base.RetrofitConfig
 import com.tuxoo.digit_caster_android.sources.calculation.entity.CalculationRequest
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RetrofitCalculationSource(
+@Singleton
+class RetrofitCalculationSource @Inject constructor(
     config: RetrofitConfig
 ) : BaseRetrofitSource(config), CalculationSource {
 

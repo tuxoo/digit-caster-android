@@ -1,10 +1,13 @@
 package com.tuxoo.digit_caster_android.model.calculation
 
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
+import javax.inject.Inject
+import javax.inject.Singleton
 
 typealias CalculationListener = (calculation: Calculation) -> Unit
 
-class CalculationService(
+@Singleton
+class CalculationService @Inject constructor(
     private val calculationSource: CalculationSource
 ) {
 

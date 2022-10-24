@@ -1,7 +1,7 @@
 package com.tuxoo.digit_caster_android.screens
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tuxoo.digit_caster_android.R
@@ -11,14 +11,16 @@ import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
 import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CalculationViewModel(
+@HiltViewModel
+class CalculationViewModel @Inject constructor(
     private val calculationService: CalculationService,
-    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _calculation = savedStateHandle.getLiveData(CALCULATION_STATE, Calculation())
+    private val _calculation = MutableLiveData<Calculation>()
     val calculation: LiveData<Calculation> = _calculation
 
     private val _showToastEvent = MutableLiveEvent<Int>()
