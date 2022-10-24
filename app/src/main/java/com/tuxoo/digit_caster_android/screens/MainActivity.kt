@@ -1,12 +1,14 @@
 package com.tuxoo.digit_caster_android.screens
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.forEach
 import com.tuxoo.digit_caster_android.databinding.ActivityMainBinding
 import com.tuxoo.digit_caster_android.util.factory
+import com.tuxoo.digit_caster_android.util.observeEvent
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,10 @@ class MainActivity : AppCompatActivity() {
             binding.currentNumber.setText(it.currentNum)
             binding.operation.text = it.operation
             binding.previousNumber.text = it.previousNum
+        }
+
+        viewModel.showToastEvent.observeEvent(this) {
+            Toast.makeText(this.applicationContext, it, Toast.LENGTH_SHORT).show()
         }
 
         binding.erase.setOnClickListener {

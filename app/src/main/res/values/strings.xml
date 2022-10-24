@@ -23,4 +23,5 @@
     <string name="copy_mark">\u00A9 2022 DigitCaster.com</string>
     <string name="digit">digit</string>
     <string name="operation">operation</string>
+    <string name="error">Something went wrong</string>
 </resources>

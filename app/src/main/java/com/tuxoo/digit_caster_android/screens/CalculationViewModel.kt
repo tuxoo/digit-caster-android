@@ -1,13 +1,16 @@
 package com.tuxoo.digit_caster_android.screens
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tuxoo.digit_caster_android.R
 import com.tuxoo.digit_caster_android.model.calculation.CalculationListener
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
+import com.tuxoo.digit_caster_android.util.MutableLiveEvent
+import com.tuxoo.digit_caster_android.util.publishEvent
+import com.tuxoo.digit_caster_android.util.share
 import kotlinx.coroutines.launch
 
 class CalculationViewModel(
@@ -17,6 +20,9 @@ class CalculationViewModel(
 
     private val _calculation = savedStateHandle.getLiveData(CALCULATION_STATE, Calculation())
     val calculation: LiveData<Calculation> = _calculation
+
+    private val _showToastEvent = MutableLiveEvent<Int>()
+    val showToastEvent = _showToastEvent.share()
 
     private val listener: CalculationListener = {
         _calculation.value = it
@@ -39,10 +45,12 @@ class CalculationViewModel(
             try {
                 calculationService.getResult()
             } catch (e: Exception) {
-                Log.d("View", "Something went wrong")
+                showErrorToast()
             }
         }
     }
+
+    private fun showErrorToast() = _showToastEvent.publishEvent(R.string.error)
 
     override fun onCleared() {
         super.onCleared()

@@ -31,12 +31,14 @@ class CalculationService(
 
     fun setOperation(operation: String): Unit =
         with(calculation) {
+            if (currentNum.isNotBlank() || previousNum.isNotBlank()) {
+                this.operation = operation
+            }
+
             if (previousNum.isBlank()) {
                 previousNum = currentNum
                 currentNum = ""
             }
-
-            this.operation = operation
             notifyChanges()
         }
 
