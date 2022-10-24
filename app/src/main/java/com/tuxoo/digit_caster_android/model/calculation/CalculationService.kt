@@ -1,8 +1,12 @@
-package com.tuxoo.digit_caster_android.model
+package com.tuxoo.digit_caster_android.model.calculation
+
+import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 
 typealias CalculationListener = (calculation: Calculation) -> Unit
 
-class CalculationService {
+class CalculationService(
+    private val calculationSource: CalculationSource
+) {
 
     private var calculation = Calculation()
     private val listeners = mutableSetOf<CalculationListener>()
@@ -35,6 +39,14 @@ class CalculationService {
             this.operation = operation
             notifyChanges()
         }
+
+    suspend fun getResult() {
+        val result = calculationSource.calculate(calculation)
+        calculation.currentNum = result
+        calculation.operation = ""
+        calculation.previousNum = ""
+        notifyChanges()
+    }
 
     fun addListener(listener: CalculationListener) {
         listeners.add(listener)

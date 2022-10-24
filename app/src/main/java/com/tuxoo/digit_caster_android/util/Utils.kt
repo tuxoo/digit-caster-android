@@ -1,4 +1,4 @@
-package com.tuxoo.digit_caster_android.screens
+package com.tuxoo.digit_caster_android.util
 
 import android.app.Activity
 import androidx.lifecycle.AbstractSavedStateViewModelFactory
@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
 import com.tuxoo.digit_caster_android.App
+import com.tuxoo.digit_caster_android.screens.CalculationViewModel
 
 class ViewModelFactory(
     private val app: App,
