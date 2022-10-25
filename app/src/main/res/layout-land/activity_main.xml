@@ -59,9 +59,9 @@
         <GridLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:columnCount="2"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:columnCount="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/gridLayout"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -82,8 +82,8 @@
                 android:id="@+id/erase"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:layout_margin="4dp"
                 android:layout_gravity="fill_vertical"
+                android:layout_margin="4dp"
                 android:background="@android:color/transparent"
                 android:text="@string/erase"
                 android:textColor="@color/black"
@@ -91,20 +91,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_columnSpan="2"
-                android:layout_gravity="fill_horizontal"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                android:lines="1"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+                android:layout_height="match_parent"
+                android:layout_columnSpan="2">
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+            </FrameLayout>
         </GridLayout>
 
         <GridLayout
@@ -283,20 +280,20 @@
                 android:tag="@string/digit"
                 android:text="@string/point" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_columnSpan="4"
-                            android:layout_gravity="fill_horizontal"
-                            android:layout_marginTop="12dp"
-                            android:lines="1"
-                            android:text="@string/copy_mark"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="4"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="12dp"
+                android:lines="1"
+                android:text="@string/copy_mark"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
         </GridLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

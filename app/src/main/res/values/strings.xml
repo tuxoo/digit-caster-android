@@ -24,4 +24,11 @@
     <string name="digit">digit</string>
     <string name="operation">operation</string>
     <string name="error">Something went wrong</string>
+    
+    <string name="no_calculations">No Calculations</string>
+    
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
 </resources>
