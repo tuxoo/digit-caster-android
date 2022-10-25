@@ -10,12 +10,14 @@ import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
 import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
 
-class CalculationViewModel(
-    savedStateHandle: SavedStateHandle,
+class CalculationViewModel @AssistedInject constructor(
+    @Assisted savedStateHandle: SavedStateHandle,
     private val calculationService: CalculationService,
 ) : ViewModel() {
 
