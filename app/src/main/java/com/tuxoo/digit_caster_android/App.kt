@@ -1,7 +1,15 @@
 package com.tuxoo.digit_caster_android
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import com.tuxoo.digit_caster_android.dependency.AppComponent
+import com.tuxoo.digit_caster_android.dependency.DaggerAppComponent
 
-@HiltAndroidApp
-class App : Application()
+class App : Application() {
+
+    lateinit var appComponent: AppComponent
+
+    override fun onCreate() {
+        super.onCreate()
+        appComponent = DaggerAppComponent.create()
+    }
+}

@@ -1,19 +1,20 @@
 package com.tuxoo.digit_caster_android.screens
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.tuxoo.digit_caster_android.R
-import com.tuxoo.digit_caster_android.model.calculation.CalculationListener
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
 import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@HiltViewModel
-class CalculationViewModel @Inject constructor(
+class CalculationViewModel(
     savedStateHandle: SavedStateHandle,
     private val calculationService: CalculationService,
 ) : ViewModel() {
@@ -24,12 +25,13 @@ class CalculationViewModel @Inject constructor(
     private val _showToastEvent = MutableLiveEvent<Int>()
     val showToastEvent = _showToastEvent.share()
 
-    private val listener: CalculationListener = {
-        _calculation.value = it
-    }
-
     init {
-        calculationService.addListener(listener)
+        viewModelScope.launch {
+            calculationService.listenCalculation()
+                .collect {
+                    _calculation.value = it
+                }
+        }
     }
 
     fun eraseOne(): Unit = calculationService.eraseOne()
@@ -51,11 +53,6 @@ class CalculationViewModel @Inject constructor(
     }
 
     private fun showErrorToast() = _showToastEvent.publishEvent(R.string.error)
-
-    override fun onCleared() {
-        super.onCleared()
-        calculationService.removeListener(listener)
-    }
 
     companion object {
         private const val CALCULATION_STATE = "calculation_state"

@@ -1,13 +1,17 @@
 package com.tuxoo.digit_caster_android.model.calculation
 
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.buffer
+import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
 typealias CalculationListener = (calculation: Calculation) -> Unit
 
-@Singleton
-class CalculationService @Inject constructor(
+class CalculationService(
     private val calculationSource: CalculationSource
 ) {
 
@@ -53,17 +57,19 @@ class CalculationService @Inject constructor(
         notifyChanges()
     }
 
-    fun addListener(listener: CalculationListener) {
+    fun listenCalculation(): Flow<Calculation> = callbackFlow {
+        val listener: CalculationListener = {
+            trySend(it)
+        }
         listeners.add(listener)
-        listener.invoke(calculation)
-    }
 
-    fun removeListener(listener: CalculationListener): Boolean =
-        listeners.remove(listener)
+        awaitClose {
+            listeners.remove(listener)
+        }
+    }.buffer(Channel.CONFLATED)
 
     private fun notifyChanges(): Unit =
         listeners.forEach {
             it.invoke(calculation)
         }
-
 }
