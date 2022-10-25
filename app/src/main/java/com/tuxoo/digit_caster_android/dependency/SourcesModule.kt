@@ -1,27 +1,18 @@
 package com.tuxoo.digit_caster_android.dependency
 
-import com.squareup.moshi.Moshi
 import com.tuxoo.digit_caster_android.model.calculation.CalculationSource
-import com.tuxoo.digit_caster_android.sources.base.RetrofitConfig
 import com.tuxoo.digit_caster_android.sources.calculation.RetrofitCalculationSource
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
-import retrofit2.Retrofit
-import javax.inject.Singleton
+
+@Module(includes = [SourcesBindModule::class])
+class SourcesModule
 
 @Module
-class SourcesModule {
+abstract class SourcesBindModule {
 
-    @Provides
-    @Singleton
-    fun provideRetrofitConfig(
-        retrofit: Retrofit,
-        moshi: Moshi
-    ): RetrofitConfig = RetrofitConfig(retrofit, moshi)
-
-    @Provides
-    @Singleton
-    fun provideCalculationSource(
-        config: RetrofitConfig
-    ): CalculationSource = RetrofitCalculationSource(config)
+    @Binds
+    abstract fun bindCalculationSource(
+        retrofitCalculationSource: RetrofitCalculationSource
+    ): CalculationSource
 }

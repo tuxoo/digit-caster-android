@@ -4,7 +4,6 @@ import com.squareup.moshi.Moshi
 import com.tuxoo.digit_caster_android.model.Const
 import dagger.Module
 import dagger.Provides
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -24,7 +23,7 @@ class NetworkModule {
     @Singleton
     fun provideClient(): OkHttpClient =
         OkHttpClient().newBuilder()
-            .addInterceptor(createLoggingInterceptor())
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
 
     @Provides
@@ -35,8 +34,4 @@ class NetworkModule {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(client)
             .build()
-
-    private fun createLoggingInterceptor(): Interceptor =
-        HttpLoggingInterceptor()
-            .setLevel(HttpLoggingInterceptor.Level.BODY)
 }

@@ -8,7 +8,7 @@ import com.tuxoo.digit_caster_android.sources.calculation.entity.CalculationRequ
 import javax.inject.Inject
 import javax.inject.Singleton
 
-class RetrofitCalculationSource(
+class RetrofitCalculationSource @Inject constructor(
     config: RetrofitConfig
 ) : BaseRetrofitSource(config), CalculationSource {
 
