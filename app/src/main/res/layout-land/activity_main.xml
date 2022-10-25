@@ -69,7 +69,7 @@
             <EditText
                 android:id="@+id/current_number"
                 android:layout_width="wrap_content"
-                android:layout_height="64dp"
+                android:layout_height="42dp"
                 android:layout_gravity="fill"
                 android:layout_margin="4dp"
                 android:background="@drawable/edit_shape"
@@ -80,8 +80,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/erase"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:layout_margin="4dp"
                 android:layout_gravity="fill_vertical"
                 android:background="@android:color/transparent"
@@ -99,7 +99,6 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
                 android:lines="1"
-                android:text="@string/copy_mark"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
