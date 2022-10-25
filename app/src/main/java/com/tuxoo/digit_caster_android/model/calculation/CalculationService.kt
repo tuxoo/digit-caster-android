@@ -11,6 +11,7 @@ import javax.inject.Singleton
 
 typealias CalculationListener = (calculation: Calculation) -> Unit
 
+@Singleton
 class CalculationService @Inject constructor(
     private val calculationSource: CalculationSource
 ) {
