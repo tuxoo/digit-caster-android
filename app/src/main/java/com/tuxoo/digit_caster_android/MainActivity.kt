@@ -1,4 +1,4 @@
-package com.tuxoo.digit_caster_android.screens
+package com.tuxoo.digit_caster_android
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.forEach
 import com.tuxoo.digit_caster_android.databinding.ActivityMainBinding
+import com.tuxoo.digit_caster_android.screens.CalculationViewModel
+import com.tuxoo.digit_caster_android.screens.HistoryFragment
 import com.tuxoo.digit_caster_android.util.CalculationViewModelFactory
 import com.tuxoo.digit_caster_android.util.GenericSavedStateViewModelFactory
 import com.tuxoo.digit_caster_android.util.appComponent
@@ -54,6 +56,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         setClickListeners()
+
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragmentContainer, HistoryFragment())
+            .commit()
     }
 
     private fun setClickListeners(): Unit =

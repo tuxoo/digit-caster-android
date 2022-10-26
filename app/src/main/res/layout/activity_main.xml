@@ -27,8 +27,8 @@
             android:ellipsize="end"
             android:lines="1"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/logoImageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="8" />
@@ -42,14 +42,14 @@
             android:ellipsize="end"
             android:lines="1"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/logoImageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/previousNumber"
             tools:text="+" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logoImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -67,7 +67,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView">
 
             <EditText
                 android:id="@+id/current_number"
@@ -76,21 +76,20 @@
                 android:layout_columnSpan="3"
                 android:layout_gravity="fill"
                 android:layout_margin="4dp"
+                android:enabled="false"
                 android:background="@drawable/edit_shape"
                 android:ellipsize="end"
                 android:hint="@string/current_num_placeholder"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/erase"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+            <ImageView
+                android:id="@+id/historyImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
                 android:layout_margin="4dp"
-                android:background="@android:color/transparent"
-                android:text="@string/erase"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                app:srcCompat="@drawable/ic_history" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
@@ -99,7 +98,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/minus" />
+                android:text="@string/multiply"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
@@ -108,7 +108,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/plus" />
+                android:text="@string/divide"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/divide"
@@ -117,16 +118,19 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/divide" />
+                android:text="@string/sqr"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/multiply"
+                android:id="@+id/erase"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
+                android:backgroundTint="@color/orange_100"
                 android:tag="@string/operation"
-                android:text="@string/multiply" />
+                android:text="@string/erase"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/seven"
@@ -135,7 +139,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/seven" />
+                android:text="@string/seven"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/eight"
@@ -144,7 +149,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/eight" />
+                android:text="@string/eight"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nine"
@@ -153,7 +159,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/nine" />
+                android:text="@string/nine"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqr"
@@ -162,7 +169,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/sqr" />
+                android:text="@string/plus"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
@@ -171,7 +179,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/four" />
+                android:text="@string/four"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
@@ -180,7 +189,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/five" />
+                android:text="@string/five"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/six"
@@ -189,7 +199,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/six" />
+                android:text="@string/six"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sqrt"
@@ -198,7 +209,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/sqrt" />
+                android:text="@string/minus"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/one"
@@ -207,7 +219,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/one" />
+                android:text="@string/one"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/two"
@@ -216,7 +229,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/two" />
+                android:text="@string/two"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/three"
@@ -225,7 +239,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/three" />
+                android:text="@string/three"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/equal"
@@ -235,7 +250,8 @@
                 android:layout_gravity="fill_vertical"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
-                android:text="@string/equal" />
+                android:text="@string/equal"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/zero"
@@ -246,7 +262,8 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/zero" />
+                android:text="@string/zero"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/point"
@@ -255,23 +272,31 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/digit"
-                android:text="@string/point" />
+                android:text="@string/dot"
+                android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainer"
+                android:layout_height="128dp"
                 android:layout_columnSpan="4"
-                android:layout_gravity="fill_horizontal"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                android:lines="1"
-                android:text="@string/copy_mark"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+                android:layout_margin="4dp"
+                android:layout_gravity="fill" />
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnSpan="4"-->
+<!--                android:layout_gravity="fill_horizontal"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginBottom="12dp"-->
+<!--                android:lines="1"-->
+<!--                android:text="@string/copy_mark"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="14sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />-->
         </GridLayout>
 
 

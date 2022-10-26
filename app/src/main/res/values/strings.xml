@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Digit Caster</string>
     <string name="current_num_placeholder">0</string>
-    <string name="erase">\u003c\u003c</string>
+    <string name="erase">C</string>
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="divide">/</string>
@@ -19,7 +19,7 @@
     <string name="one">1</string>
     <string name="zero">0</string>
     <string name="equal">=</string>
-    <string name="point">.</string>
+    <string name="dot">.</string>
     <string name="copy_mark">\u00A9 2022 DigitCaster.com</string>
     <string name="digit">digit</string>
     <string name="operation">operation</string>

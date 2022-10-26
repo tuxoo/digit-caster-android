@@ -18,28 +18,6 @@
         android:layout_gravity="center"
         android:visibility="gone" />
 
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/tryAgainContainer"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:gravity="center"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:orientation="vertical"-->
-    <!--        android:visibility="gone">-->
-
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="@string/failed_to_load_users"/>-->
-
-    <!--        <Button-->
-    <!--            android:id="@+id/tryAgainButton"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="@string/try_again"/>-->
-
-    <!--    </LinearLayout>-->
-
     <TextView
         android:id="@+id/noUsersTextView"
         android:layout_width="wrap_content"
