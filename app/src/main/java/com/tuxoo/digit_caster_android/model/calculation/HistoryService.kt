@@ -9,16 +9,33 @@ typealias HistoryListener = (history: List<HistoryItem>) -> Unit
 @Singleton
 class HistoryService @Inject constructor(){
 
-    private var history = mutableListOf<HistoryItem>()
+    private var history = listOf(
+        HistoryItem(
+            operation = "+",
+            topNum = "88",
+            bottomNum = "12",
+            result = "100",
+        ),
+        HistoryItem(
+            operation = "-",
+            topNum = "60",
+            bottomNum = "12",
+            result = "48",
+        ),
+        HistoryItem(
+            operation = "*",
+            topNum = "15",
+            bottomNum = "1",
+            result = "15",
+        ),
+        HistoryItem(
+            operation = "/",
+            topNum = "44",
+            bottomNum = "11",
+            result = "4",
+        )
+    )
     private val listeners = mutableSetOf<HistoryListener>()
-
-    init {
-        history = (1..5).map {
-            HistoryItem(
-                operation = "+"
-            )
-        }.toMutableList()
-    }
 
     fun addListener(listener: HistoryListener) {
         listeners.add(listener)

@@ -94,7 +94,7 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainer"
                 android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:layout_height="136dp"
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill"
                 android:layout_margin="4dp"

@@ -8,7 +8,7 @@ import com.tuxoo.digit_caster_android.model.calculation.HistoryService
 import com.tuxoo.digit_caster_android.model.calculation.entity.HistoryItem
 
 class HistoryViewModel(
-    private val historyService: HistoryService
+    historyService: HistoryService
 ) : ViewModel() {
 
     private val _history = MutableLiveData<List<HistoryItem>>()

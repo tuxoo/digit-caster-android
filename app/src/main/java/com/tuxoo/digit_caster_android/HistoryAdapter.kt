@@ -31,6 +31,9 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
 
         with(holder.binding) {
             itemOperation.text = historyItem.operation
+            topNum.text = historyItem.topNum
+            bottomNum.text = historyItem.bottomNum
+            resultNum.text = historyItem.result
         }
     }
 

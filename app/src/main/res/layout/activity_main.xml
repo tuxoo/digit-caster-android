@@ -277,10 +277,12 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainer"
-                android:layout_height="128dp"
+                android:layout_height="132dp"
                 android:layout_columnSpan="4"
-                android:layout_margin="4dp"
-                android:layout_gravity="fill" />
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="fill"
+                android:background="@drawable/background_shape">
+            </androidx.fragment.app.FragmentContainerView>
 
 <!--            <TextView-->
 <!--                android:layout_width="match_parent"-->
