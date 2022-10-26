@@ -77,23 +77,25 @@
                 android:layout_columnSpan="3"
                 android:layout_gravity="fill"
                 android:layout_margin="4dp"
-                android:enabled="false"
                 android:background="@drawable/edit_shape"
                 android:ellipsize="end"
+                android:enabled="false"
                 android:hint="@string/current_num_placeholder"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/historyImageView"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/delete"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_margin="4dp"
-                app:srcCompat="@drawable/ic_history" />
+                android:background="@android:color/transparent"
+                android:text="@string/delete"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/minus"
+                android:id="@+id/multiply"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -103,7 +105,7 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/plus"
+                android:id="@+id/divide"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -113,7 +115,7 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/divide"
+                android:id="@+id/sqr"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -129,7 +131,6 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="@color/orange_100"
-                android:tag="@string/operation"
                 android:text="@string/erase"
                 android:textSize="16sp" />
 
@@ -164,7 +165,7 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sqr"
+                android:id="@+id/plus"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -204,7 +205,7 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sqrt"
+                android:id="@+id/minus"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="4dp"
@@ -276,30 +277,44 @@
                 android:text="@string/dot"
                 android:textSize="16sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="3"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"
+                android:lines="1"
+                android:text="@string/copy_mark"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/history"
+                android:layout_width="32dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"
+                android:layout_gravity="fill"
+                android:background="@drawable/button_shape"
+                android:tag="@string/digit"
+                android:text="..."
+                android:textSize="12sp" />
+
             <androidx.fragment.app.FragmentContainerView
-                android:visibility="gone"
                 android:id="@+id/fragmentContainer"
-                android:layout_height="132dp"
+                android:name="com.tuxoo.digit_caster_android.screens.history.HistoryFragment"
+                android:layout_height="136dp"
+                android:layout_marginBottom="4dp"
                 android:layout_columnSpan="4"
                 android:layout_gravity="fill"
-                android:background="@drawable/background_shape">
-            </androidx.fragment.app.FragmentContainerView>
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnSpan="4"-->
-<!--                android:layout_gravity="fill_horizontal"-->
-<!--                android:layout_marginTop="12dp"-->
-<!--                android:layout_marginBottom="12dp"-->
-<!--                android:lines="1"-->
-<!--                android:text="@string/copy_mark"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="14sp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/gridLayout" />-->
+                android:background="@drawable/background_shape"
+                android:visibility="gone"
+                tools:layout="@layout/fragment_history" />
         </GridLayout>
 
 

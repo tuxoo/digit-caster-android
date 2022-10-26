@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Digit Caster</string>
     <string name="current_num_placeholder">0</string>
+    <string name="delete">\u003c\u003c</string>
     <string name="erase">C</string>
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="divide">/</string>
     <string name="multiply">*</string>
-    <string name="sqrt">√</string>
     <string name="sqr">^</string>
     <string name="nine">9</string>
     <string name="eight">8</string>

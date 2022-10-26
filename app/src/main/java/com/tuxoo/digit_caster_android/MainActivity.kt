@@ -44,11 +44,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this.applicationContext, it, Toast.LENGTH_SHORT).show()
         }
 
-        binding.erase.setOnClickListener {
+        binding.delete?.setOnClickListener {
             viewModel.eraseOne()
         }
 
-        binding.erase.setOnLongClickListener {
+        binding.erase.setOnClickListener {
             viewModel.erase()
         }
 
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         setClickListeners()
 
-        binding.historyImageView?.setOnClickListener { // TODO : check ?.
+        binding.history?.setOnClickListener { // TODO : check ?.
             val vis = binding.fragmentContainer.visibility
             if (vis == View.VISIBLE) binding.fragmentContainer.visibility = View.GONE
             else binding.fragmentContainer.visibility = View.VISIBLE

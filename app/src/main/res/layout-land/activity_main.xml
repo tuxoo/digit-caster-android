@@ -79,13 +79,13 @@
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/erase"
+                android:id="@+id/delete"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
                 android:layout_gravity="fill_vertical"
                 android:layout_margin="4dp"
                 android:background="@android:color/transparent"
-                android:text="@string/erase"
+                android:text="@string/delete"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -94,11 +94,13 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainer"
                 android:layout_width="0dp"
-                android:layout_height="136dp"
+                android:layout_height="142dp"
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill"
-                android:layout_margin="4dp"
-                tools:ignore="MissingConstraints" />
+                android:layout_margin="2dp"
+                tools:ignore="MissingConstraints"
+                android:name="com.tuxoo.digit_caster_android.screens.history.HistoryFragment"
+                tools:layout="@layout/fragment_history" />
 
         </GridLayout>
 
@@ -114,22 +116,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/minus"
+                android:id="@+id/multiply"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/minus" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/plus"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/button_shape"
-                android:tag="@string/operation"
-                android:text="@string/plus" />
+                android:text="@string/multiply" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/divide"
@@ -141,13 +134,22 @@
                 android:text="@string/divide" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/multiply"
+                android:id="@+id/sqr"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/multiply" />
+                android:text="@string/sqr" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/erase"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/orange_100"
+                android:text="@string/erase" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/seven"
@@ -177,13 +179,13 @@
                 android:text="@string/nine" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sqr"
+                android:id="@+id/plus"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/sqr" />
+                android:text="@string/plus" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/four"
@@ -213,13 +215,13 @@
                 android:text="@string/six" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sqrt"
+                android:id="@+id/minus"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/button_shape"
                 android:tag="@string/operation"
-                android:text="@string/sqrt" />
+                android:text="@string/minus" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/one"
