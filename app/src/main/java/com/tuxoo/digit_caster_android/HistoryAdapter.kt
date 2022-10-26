@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tuxoo.digit_caster_android.databinding.ItemHistoryBinding
-import com.tuxoo.digit_caster_android.model.calculation.entity.HistoryItem
+import com.tuxoo.digit_caster_android.model.history.HistoryItem
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 

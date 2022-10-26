@@ -1,13 +1,12 @@
-package com.tuxoo.digit_caster_android.model.calculation
+package com.tuxoo.digit_caster_android.model.history
 
-import com.tuxoo.digit_caster_android.model.calculation.entity.HistoryItem
 import javax.inject.Inject
 import javax.inject.Singleton
 
 typealias HistoryListener = (history: List<HistoryItem>) -> Unit
 
 @Singleton
-class HistoryService @Inject constructor(){
+class HistoryService @Inject constructor() {
 
     private var history = listOf(
         HistoryItem(

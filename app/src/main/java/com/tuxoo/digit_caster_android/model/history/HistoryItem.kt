@@ -1,4 +1,4 @@
-package com.tuxoo.digit_caster_android.model.calculation.entity
+package com.tuxoo.digit_caster_android.model.history
 
 data class HistoryItem(
     val operation: String,

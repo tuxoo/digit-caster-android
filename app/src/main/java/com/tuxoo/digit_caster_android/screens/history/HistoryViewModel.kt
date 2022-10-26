@@ -1,11 +1,11 @@
-package com.tuxoo.digit_caster_android.screens
+package com.tuxoo.digit_caster_android.screens.history
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.tuxoo.digit_caster_android.model.calculation.HistoryListener
-import com.tuxoo.digit_caster_android.model.calculation.HistoryService
-import com.tuxoo.digit_caster_android.model.calculation.entity.HistoryItem
+import com.tuxoo.digit_caster_android.model.history.HistoryItem
+import com.tuxoo.digit_caster_android.model.history.HistoryListener
+import com.tuxoo.digit_caster_android.model.history.HistoryService
 
 class HistoryViewModel(
     historyService: HistoryService

@@ -1,8 +1,7 @@
 package com.tuxoo.digit_caster_android.dependency
 
 import com.tuxoo.digit_caster_android.MainActivity
-import com.tuxoo.digit_caster_android.model.calculation.HistoryService
-import com.tuxoo.digit_caster_android.screens.HistoryFragment
+import com.tuxoo.digit_caster_android.screens.history.HistoryFragment
 import dagger.Component
 import javax.inject.Singleton
 

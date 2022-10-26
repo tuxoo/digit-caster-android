@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.savedstate.SavedStateRegistryOwner
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
-import com.tuxoo.digit_caster_android.model.calculation.HistoryService
-import com.tuxoo.digit_caster_android.screens.CalculationViewModel
-import com.tuxoo.digit_caster_android.screens.HistoryViewModel
+import com.tuxoo.digit_caster_android.model.history.HistoryService
+import com.tuxoo.digit_caster_android.screens.calculation.CalculationViewModel
+import com.tuxoo.digit_caster_android.screens.history.HistoryViewModel
 import javax.inject.Inject
 
 interface ViewModelAssistedFactory<T : ViewModel> {

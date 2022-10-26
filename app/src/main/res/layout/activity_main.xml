@@ -277,6 +277,7 @@
                 android:textSize="16sp" />
 
             <androidx.fragment.app.FragmentContainerView
+                android:visibility="gone"
                 android:id="@+id/fragmentContainer"
                 android:layout_height="132dp"
                 android:layout_columnSpan="4"

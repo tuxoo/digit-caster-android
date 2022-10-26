@@ -1,4 +1,4 @@
-package com.tuxoo.digit_caster_android.screens
+package com.tuxoo.digit_caster_android.screens.calculation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
@@ -13,8 +13,6 @@ import com.tuxoo.digit_caster_android.util.share
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-import javax.inject.Singleton
 
 class CalculationViewModel @AssistedInject constructor(
     @Assisted savedStateHandle: SavedStateHandle,

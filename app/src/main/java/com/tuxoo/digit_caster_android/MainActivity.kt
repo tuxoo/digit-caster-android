@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.forEach
 import com.tuxoo.digit_caster_android.databinding.ActivityMainBinding
-import com.tuxoo.digit_caster_android.screens.CalculationViewModel
-import com.tuxoo.digit_caster_android.screens.HistoryFragment
+import com.tuxoo.digit_caster_android.screens.calculation.CalculationViewModel
+import com.tuxoo.digit_caster_android.screens.history.HistoryFragment
 import com.tuxoo.digit_caster_android.util.CalculationViewModelFactory
 import com.tuxoo.digit_caster_android.util.GenericSavedStateViewModelFactory
 import com.tuxoo.digit_caster_android.util.appComponent

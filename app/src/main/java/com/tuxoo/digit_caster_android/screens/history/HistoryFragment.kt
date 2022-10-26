@@ -1,18 +1,16 @@
-package com.tuxoo.digit_caster_android.screens
+package com.tuxoo.digit_caster_android.screens.history
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tuxoo.digit_caster_android.HistoryAdapter
 import com.tuxoo.digit_caster_android.databinding.FragmentHistoryBinding
-import com.tuxoo.digit_caster_android.model.calculation.HistoryListener
-import com.tuxoo.digit_caster_android.model.calculation.HistoryService
-import com.tuxoo.digit_caster_android.util.GenericSavedStateViewModelFactory
+import com.tuxoo.digit_caster_android.model.history.HistoryListener
+import com.tuxoo.digit_caster_android.model.history.HistoryService
 import com.tuxoo.digit_caster_android.util.HistoryViewModelFactory
 import com.tuxoo.digit_caster_android.util.appComponent
 import javax.inject.Inject
