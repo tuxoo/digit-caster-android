@@ -1,6 +1,7 @@
 package com.tuxoo.digit_caster_android
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +57,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         setClickListeners()
+
+        binding.historyImageView?.setOnClickListener { // TODO : check ?.
+            val vis = binding.fragmentContainer.visibility
+            if (vis == View.VISIBLE) binding.fragmentContainer.visibility = View.GONE
+            else binding.fragmentContainer.visibility = View.VISIBLE
+        }
 
         supportFragmentManager
             .beginTransaction()
