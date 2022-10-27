@@ -11,10 +11,10 @@
         android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="12dp"
         android:layout_marginStart="42dp"
+        android:layout_marginTop="42dp"
         android:layout_marginEnd="42dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/background_shape"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,34 +33,56 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageView
             android:id="@+id/calculatorNav"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:text="@string/calculator"
-            android:textSize="16sp" />
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_calculate" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageView
             android:id="@+id/historyNav"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:text="@string/history"
-            android:textSize="16sp" />
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_history" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageView
             android:id="@+id/helpNav"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_margin="4dp"
-            android:background="@android:color/transparent"
-            android:text="@string/help"
-            android:textSize="16sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_help" />
+
+        <!--        <androidx.appcompat.widget.AppCompatButton-->
+        <!--            android:id="@+id/historyNav"-->
+        <!--            android:layout_width="56dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:layout_margin="4dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:background="@android:color/transparent"-->
+        <!--            android:text="@string/history"-->
+        <!--            android:textSize="16sp" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatButton-->
+        <!--            android:id="@+id/helpNav"-->
+        <!--            android:layout_width="56dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:layout_margin="4dp"-->
+        <!--            android:background="@android:color/transparent"-->
+        <!--            android:text="@string/help"-->
+        <!--            android:textSize="16sp" />-->
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,13 +41,7 @@ class HistoryService @Inject constructor() {
             topNum = "60",
             bottomNum = "12",
             result = "48",
-        ),
-        HistoryItem(
-            operation = "*",
-            topNum = "15",
-            bottomNum = "1",
-            result = "15",
-        ),
+        )
     )
     private val listeners = mutableSetOf<HistoryListener>()
 
