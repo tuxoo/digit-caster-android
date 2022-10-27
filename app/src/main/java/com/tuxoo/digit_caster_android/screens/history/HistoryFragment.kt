@@ -44,12 +44,6 @@ class HistoryFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 
-        historyService.addListener { historyListener }
-
         return binding.root
-    }
-
-    private val historyListener: HistoryListener = {
-        adapter.history = it
     }
 }

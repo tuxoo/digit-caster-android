@@ -317,7 +317,6 @@
                 tools:layout="@layout/fragment_history" />
         </GridLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
