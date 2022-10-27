@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    android:background="@drawable/history_shape">
+    android:layout_margin="12dp"
+    android:background="@drawable/history_item_shape">
 
     <TextView
         android:id="@+id/itemOperation"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginStart="8dp"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="+" />
@@ -27,7 +27,7 @@
         android:ellipsize="end"
         android:lines="1"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/itemOperation"
         app:layout_constraintTop_toTopOf="parent"
@@ -40,7 +40,7 @@
         android:ellipsize="end"
         android:lines="1"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/topNum"
         app:layout_constraintTop_toBottomOf="@id/topNum"
@@ -55,7 +55,7 @@
         android:ellipsize="end"
         android:lines="1"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/bottomNum"

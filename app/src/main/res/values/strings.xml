@@ -31,4 +31,8 @@
     <string name="subtraction">Subtraction</string>
     <string name="multiplication">Multiplication</string>
     <string name="division">Division</string>
+
+    <string name="calculator">Cal</string>
+    <string name="history">His</string>
+    <string name="help">Help</string>
 </resources>

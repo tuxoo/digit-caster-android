@@ -26,6 +26,7 @@ class HistoryFragment : Fragment() {
     private val viewModel: HistoryViewModel by viewModels {
         HistoryViewModelFactory(historyService)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
