@@ -8,7 +8,6 @@ import com.tuxoo.digit_caster_android.R
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import com.tuxoo.digit_caster_android.model.history.HistoryService
-import com.tuxoo.digit_caster_android.model.history.HistoryService.Companion.toCalculation
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
 import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share

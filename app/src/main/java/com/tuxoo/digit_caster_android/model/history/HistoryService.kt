@@ -1,6 +1,5 @@
 package com.tuxoo.digit_caster_android.model.history
 
-import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -57,13 +56,5 @@ class HistoryService @Inject constructor() {
         awaitClose {
             listeners.remove(listener)
         }
-    }
-
-    companion object {
-        fun HistoryItem.toCalculation(): Calculation = Calculation(
-            previousNum = this.firstNum,
-            currentNum = this.secondNum,
-            operation = this.operation
-        )
     }
 }
