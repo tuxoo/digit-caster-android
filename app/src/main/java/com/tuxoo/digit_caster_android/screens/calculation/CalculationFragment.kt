@@ -10,8 +10,7 @@ import androidx.core.view.forEach
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.tuxoo.digit_caster_android.databinding.FragmentCalculatorBinding
-import com.tuxoo.digit_caster_android.util.CalculationViewModelFactory
-import com.tuxoo.digit_caster_android.util.GenericSavedStateViewModelFactory
+import com.tuxoo.digit_caster_android.util.ViewModelFactory
 import com.tuxoo.digit_caster_android.util.appComponent
 import com.tuxoo.digit_caster_android.util.observeEvent
 import javax.inject.Inject
@@ -19,12 +18,13 @@ import javax.inject.Inject
 class CalculationFragment : Fragment() {
 
     private lateinit var binding: FragmentCalculatorBinding
-    private val viewModel: CalculationViewModel by viewModels {
-        GenericSavedStateViewModelFactory(calculationViewModelFactory, this)
-    }
 
     @Inject
-    lateinit var calculationViewModelFactory: CalculationViewModelFactory
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val viewModel: CalculationViewModel by viewModels {
+        viewModelFactory
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

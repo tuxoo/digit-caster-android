@@ -1,25 +1,25 @@
 package com.tuxoo.digit_caster_android.screens.calculation
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tuxoo.digit_caster_android.R
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
+import com.tuxoo.digit_caster_android.model.history.HistoryService
+import com.tuxoo.digit_caster_android.model.history.HistoryService.Companion.toCalculation
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
 import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedInject
 import kotlinx.coroutines.launch
 
-class CalculationViewModel @AssistedInject constructor(
-    @Assisted savedStateHandle: SavedStateHandle,
+class CalculationViewModel(
     private val calculationService: CalculationService,
+    historyService: HistoryService,
 ) : ViewModel() {
 
-    private val _calculation = savedStateHandle.getLiveData(CALCULATION_STATE, Calculation())
+    private val _calculation = MutableLiveData<Calculation>()
     val calculation: LiveData<Calculation> = _calculation
 
     private val _showToastEvent = MutableLiveEvent<Int>()
@@ -31,6 +31,9 @@ class CalculationViewModel @AssistedInject constructor(
                 .collect {
                     _calculation.value = it
                 }
+        }
+        with(historyService.getHistory().last()) {
+            _calculation.value = this.toCalculation()
         }
     }
 
@@ -53,8 +56,4 @@ class CalculationViewModel @AssistedInject constructor(
     }
 
     private fun showErrorToast() = _showToastEvent.publishEvent(R.string.error)
-
-    companion object {
-        private const val CALCULATION_STATE = "calculation_state"
-    }
 }

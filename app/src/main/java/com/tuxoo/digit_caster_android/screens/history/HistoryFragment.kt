@@ -9,9 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tuxoo.digit_caster_android.HistoryAdapter
 import com.tuxoo.digit_caster_android.databinding.FragmentHistoryBinding
-import com.tuxoo.digit_caster_android.model.history.HistoryListener
-import com.tuxoo.digit_caster_android.model.history.HistoryService
-import com.tuxoo.digit_caster_android.util.HistoryViewModelFactory
+import com.tuxoo.digit_caster_android.util.ViewModelFactory
 import com.tuxoo.digit_caster_android.util.appComponent
 import javax.inject.Inject
 
@@ -21,10 +19,10 @@ class HistoryFragment : Fragment() {
     private lateinit var adapter: HistoryAdapter
 
     @Inject
-    lateinit var historyService: HistoryService
+    lateinit var viewModelFactory: ViewModelFactory
 
     private val viewModel: HistoryViewModel by viewModels {
-        HistoryViewModelFactory(historyService)
+        viewModelFactory
     }
 
     override fun onCreateView(
@@ -42,7 +40,9 @@ class HistoryFragment : Fragment() {
             adapter.history = it
         }
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext()).apply {
+            reverseLayout = true
+        }
         binding.recyclerView.adapter = adapter
 
         return binding.root
