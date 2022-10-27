@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -286,16 +287,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
-<!--        <androidx.fragment.app.FragmentContainerView-->
-<!--            android:id="@+id/fragmentContainer"-->
-<!--            android:name="com.tuxoo.digit_caster_android.screens.history.HistoryFragment"-->
-<!--            android:layout_height="136dp"-->
-<!--            android:layout_marginBottom="4dp"-->
-<!--            android:layout_columnSpan="4"-->
-<!--            android:layout_gravity="fill"-->
-<!--            android:background="@drawable/background_shape"-->
-<!--            android:visibility="gone"-->
-<!--            tools:layout="@layout/fragment_history" />-->
+        <!--        <androidx.fragment.app.FragmentContainerView-->
+        <!--            android:id="@+id/fragmentContainer"-->
+        <!--            android:name="com.tuxoo.digit_caster_android.screens.history.HistoryFragment"-->
+        <!--            android:layout_height="136dp"-->
+        <!--            android:layout_marginBottom="4dp"-->
+        <!--            android:layout_columnSpan="4"-->
+        <!--            android:layout_gravity="fill"-->
+        <!--            android:background="@drawable/background_shape"-->
+        <!--            android:visibility="gone"-->
+        <!--            tools:layout="@layout/fragment_history" />-->
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

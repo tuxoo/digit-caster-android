@@ -35,4 +35,10 @@
     <string name="calculator">Cal</string>
     <string name="history">His</string>
     <string name="help">Help</string>
+
+    <string name="calculation_panel_desc">Calculation Navigation Image</string>
+    <string name="history_panel_desc">History Navigation Image</string>
+    <string name="help_panel_desc">Calculation Navigation Image</string>
+
+    <string name="logo">Project Logotype</string>
 </resources>
