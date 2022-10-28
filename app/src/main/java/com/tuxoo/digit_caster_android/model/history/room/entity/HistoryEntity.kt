@@ -9,7 +9,7 @@ import com.tuxoo.digit_caster_android.model.history.entity.History
     tableName = "history"
 )
 data class HistoryEntity(
-    @PrimaryKey val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     val operation: String,
     @ColumnInfo(name = "first_number") val firstNum: String,
     @ColumnInfo(name = "second_number") val secondNum: String,

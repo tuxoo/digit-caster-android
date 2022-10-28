@@ -17,15 +17,16 @@ class RoomHistoryRepository(
             }
         }
 
-    override suspend fun add(history: History) {
-        historyDao.save(
-            HistoryEntity(
-                id = 10,
-                operation = "",
-                firstNum = "",
-                secondNum = "",
-                result = "",
+    override suspend fun add(history: History): Unit =
+        with(history) {
+            historyDao.save(
+                HistoryEntity(
+                    id = 0,
+                    operation = operation,
+                    firstNum = firstNum,
+                    secondNum = secondNum,
+                    result = result,
+                )
             )
-        )
-    }
+        }
 }

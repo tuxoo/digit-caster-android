@@ -18,7 +18,7 @@ class HistoryViewModel(
 
     init {
         viewModelScope.launch {
-            historyRepository.getAll().collect() {
+            historyRepository.getAll().collect {
                 it.forEach {
                     Log.d("E", it.toString())
                 }
