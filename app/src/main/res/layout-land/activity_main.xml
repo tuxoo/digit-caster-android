@@ -96,7 +96,7 @@
                 android:layout_height="142dp"
                 android:layout_columnSpan="2"
                 android:layout_gravity="fill"
-                android:layout_margin="2dp"
+                android:layout_margin="4dp"
                 tools:ignore="MissingConstraints"
                 android:name="com.tuxoo.digit_caster_android.screens.history.HistoryFragment"
                 tools:layout="@layout/fragment_history" />
