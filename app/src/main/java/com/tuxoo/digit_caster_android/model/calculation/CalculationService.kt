@@ -1,6 +1,8 @@
 package com.tuxoo.digit_caster_android.model.calculation
 
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
+import com.tuxoo.digit_caster_android.model.history.HistoryRepository
+import com.tuxoo.digit_caster_android.model.history.entity.History
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +15,8 @@ typealias CalculationListener = (calculation: Calculation) -> Unit
 
 @Singleton
 class CalculationService @Inject constructor(
-    private val calculationSource: CalculationSource
+    private val calculationSource: CalculationSource,
+    private val historyRepository: HistoryRepository
 ) {
 
     private var calculation = Calculation()
@@ -52,10 +55,22 @@ class CalculationService @Inject constructor(
 
     suspend fun getResult() {
         val result = calculationSource.calculate(calculation)
+
+        saveResult()
+
         calculation.currentNum = result
         calculation.operation = ""
         calculation.previousNum = ""
         notifyChanges()
+    }
+
+    private suspend fun saveResult() {
+        historyRepository.add(History(
+            operation = "E",
+            firstNum = "E",
+            secondNum = "E",
+            result = "E"
+        ))
     }
 
     fun listenCalculation(): Flow<Calculation> = callbackFlow {

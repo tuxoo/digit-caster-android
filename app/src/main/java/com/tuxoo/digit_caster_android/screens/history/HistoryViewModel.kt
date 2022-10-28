@@ -1,28 +1,29 @@
 package com.tuxoo.digit_caster_android.screens.history
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tuxoo.digit_caster_android.model.history.HistoryItem
-import com.tuxoo.digit_caster_android.model.history.HistoryListener
-import com.tuxoo.digit_caster_android.model.history.HistoryService
+import com.tuxoo.digit_caster_android.model.history.HistoryRepository
+import com.tuxoo.digit_caster_android.model.history.entity.History
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(
-    historyService: HistoryService
+    historyRepository: HistoryRepository
 ) : ViewModel() {
 
-    private val _history = MutableLiveData<List<HistoryItem>>()
-    val history: LiveData<List<HistoryItem>> = _history
+    private val _history = MutableLiveData<List<History>>()
+    var history: LiveData<List<History>> = _history
 
     init {
         viewModelScope.launch {
-            historyService.listenHistory()
-                .collect {
-                    _history.value = it
+            historyRepository.getAll().collect() {
+                it.forEach {
+                    Log.d("E", it.toString())
                 }
+                _history.value = it
+            }
         }
-        _history.value = historyService.getHistory()
     }
 }

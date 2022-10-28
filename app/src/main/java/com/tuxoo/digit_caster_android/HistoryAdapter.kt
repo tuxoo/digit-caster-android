@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tuxoo.digit_caster_android.databinding.ItemHistoryBinding
-import com.tuxoo.digit_caster_android.model.history.HistoryItem
+import com.tuxoo.digit_caster_android.model.history.entity.History
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
-    var history: List<HistoryItem> = emptyList()
+    var history: List<History> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()

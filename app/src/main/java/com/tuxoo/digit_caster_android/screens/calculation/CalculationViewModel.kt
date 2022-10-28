@@ -7,15 +7,17 @@ import androidx.lifecycle.viewModelScope
 import com.tuxoo.digit_caster_android.R
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
-import com.tuxoo.digit_caster_android.model.history.HistoryService
+import com.tuxoo.digit_caster_android.model.history.HistoryRepository
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
 import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class CalculationViewModel(
     private val calculationService: CalculationService,
-    historyService: HistoryService,
+    historyRepository: HistoryRepository,
 ) : ViewModel() {
 
     private val _calculation = MutableLiveData<Calculation>()
@@ -31,8 +33,13 @@ class CalculationViewModel(
                     _calculation.value = it
                 }
         }
-        with(historyService.getHistory().last()) {
-            _calculation.value = this.toCalculation()
+
+        viewModelScope.launch {
+            historyRepository.getAll().collect {
+                if (it.isNotEmpty()) {
+                    _calculation.value = it.last().toCalculation()
+                }
+            }
         }
     }
 
@@ -46,11 +53,11 @@ class CalculationViewModel(
 
     fun getResult() {
         viewModelScope.launch {
-            try {
+//            try {
                 calculationService.getResult()
-            } catch (e: Exception) {
-                showErrorToast()
-            }
+//            } catch (e: Exception) {
+//                showErrorToast()
+//            }
         }
     }
 
