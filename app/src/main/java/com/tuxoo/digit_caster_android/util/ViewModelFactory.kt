@@ -15,8 +15,7 @@ class ViewModelFactory @Inject constructor(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         val viewModel = when (modelClass) {
             CalculationViewModel::class.java -> CalculationViewModel(
-                calculationService,
-                historyRepository
+                calculationService
             )
             HistoryViewModel::class.java -> HistoryViewModel(historyRepository)
             else -> error("Unknown view model class")

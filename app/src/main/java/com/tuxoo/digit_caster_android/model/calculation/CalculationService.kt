@@ -4,15 +4,11 @@ import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
 import com.tuxoo.digit_caster_android.model.calculation.entity.CalculationWithResult
 import com.tuxoo.digit_caster_android.model.history.HistoryRepository
 import com.tuxoo.digit_caster_android.model.history.entity.History
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.buffer
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -24,18 +20,8 @@ class CalculationService @Inject constructor(
     private val historyRepository: HistoryRepository
 ) {
 
-    private lateinit var calculation : Calculation
+    private val calculation = Calculation()
     private val listeners = mutableSetOf<CalculationListener>()
-
-    init {
-        CoroutineScope(Dispatchers.IO).launch {
-            historyRepository.getAll().collect {
-                if (it.isNotEmpty()) {
-                    calculation = it.last().toCalculation()
-                }
-            }
-        }
-    }
 
     fun eraseOne() {
         calculation.currentNum = calculation.currentNum.dropLast(1)

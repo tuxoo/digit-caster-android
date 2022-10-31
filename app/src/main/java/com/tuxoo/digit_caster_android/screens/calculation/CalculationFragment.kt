@@ -81,5 +81,9 @@ class CalculationFragment : Fragment() {
     companion object {
         private const val DIGIT = "digit"
         private const val OPERATION = "operation"
+
+
+        fun newInstance(): CalculationFragment =
+            CalculationFragment()
     }
 }

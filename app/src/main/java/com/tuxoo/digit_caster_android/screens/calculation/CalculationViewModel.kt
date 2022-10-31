@@ -4,18 +4,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tuxoo.digit_caster_android.R
 import com.tuxoo.digit_caster_android.model.calculation.CalculationService
 import com.tuxoo.digit_caster_android.model.calculation.entity.Calculation
-import com.tuxoo.digit_caster_android.model.history.HistoryRepository
 import com.tuxoo.digit_caster_android.util.MutableLiveEvent
-import com.tuxoo.digit_caster_android.util.publishEvent
 import com.tuxoo.digit_caster_android.util.share
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CalculationViewModel(
-    private val calculationService: CalculationService,
-    historyRepository: HistoryRepository,
+    private val calculationService: CalculationService
 ) : ViewModel() {
 
     private val _calculation = MutableLiveData<Calculation>()
@@ -31,14 +29,6 @@ class CalculationViewModel(
                     _calculation.value = it
                 }
         }
-
-        viewModelScope.launch {
-            historyRepository.getAll().collect {
-                if (it.isNotEmpty()) {
-                    _calculation.value = it.last().toCalculation()
-                }
-            }
-        }
     }
 
     fun eraseOne(): Unit = calculationService.eraseOne()
@@ -51,13 +41,11 @@ class CalculationViewModel(
 
     fun getResult() {
         viewModelScope.launch {
-//            try {
+            withContext(Dispatchers.IO) {
                 calculationService.getResult()
-//            } catch (e: Exception) {
-//                showErrorToast()
-//            }
+            }
         }
     }
 
-    private fun showErrorToast() = _showToastEvent.publishEvent(R.string.error)
+//    private fun showErrorToast() = _showToastEvent.publishEvent(R.string.error)
 }
